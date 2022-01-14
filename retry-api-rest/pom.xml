@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.inditex.drafts</groupId>
+    <artifactId>retry</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <relativePath>..</relativePath>
+  </parent>
+
+  <artifactId>retry-api-rest</artifactId>
+  <packaging>jar</packaging>
+
+  <name>${project.groupId}:${project.artifactId}</name>
+  <description>REST services definition module</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>retry-domain</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.inditex.aqsw.framework.common</groupId>
+      <artifactId>common-framework-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.inditex.aqsw.framework.service</groupId>
+      <artifactId>service-framework-starter-rest-reactive</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.inditex.aqsw.framework.service</groupId>
+      <artifactId>service-framework-starter-aaa-oidc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.projectreactor</groupId>
+      <artifactId>reactor-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>${project.artifactId}-${project.version}</finalName>
+    <plugins />
+  </build>
+
+  <reporting />
+</project>

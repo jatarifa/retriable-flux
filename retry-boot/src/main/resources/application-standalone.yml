@@ -1,0 +1,40 @@
+logging:
+  level:
+    root: INFO
+    com.inditex.aqsw.framework.common.metrics: TRACE
+amiga:
+  server:
+    context-path: /
+    port: 8080
+  service:
+    aaa:
+      local:
+        enable-local-test: true
+      paths:
+        app-public-path: /amiga/**,/swagger-ui**,/itx-openapi.js,/v1/**
+    rest:
+      logging:
+        is-production: false
+    bus:
+      enabled: false
+  common:
+    config:
+      enabled: true
+      server:
+        mock: true
+    reactor:
+      block-hound:
+        enabled: false
+    metrics:
+      enabled: true
+      send: false
+metadata:
+  jirakey: retry
+
+retry-configuration:
+  ignored-exceptions:
+  - com.inditex.drafts.infrastructure.repository.DuplicateException
+  backoff:
+    max-attempts: 3
+    min-backoff: PT1S
+    jitter: 0.5

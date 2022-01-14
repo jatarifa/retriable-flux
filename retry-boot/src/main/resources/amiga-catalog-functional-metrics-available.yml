@@ -1,0 +1,20 @@
+amiga:
+  service:
+    catalog:
+      metrics:
+        available:
+          functional:
+            agrupations:
+              default:
+                description: metrics without group
+                metrics:
+                  "[fail_on_retry]":
+                    type: COUNTER
+                    description: Retries counter
+                    tags:
+                      platformgroup:
+                        description: Platform group (common tag from AMIGA)
+                        regExp: ".*"
+                      service:
+                        description: Service (common tag from AMIGA)
+                        regExp: ".*"

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.inditex.aqsw.framework.amiga</groupId>
+    <artifactId>amiga-framework</artifactId>
+    <version>4.5.0</version>
+    <relativePath />
+  </parent>
+
+  <groupId>com.inditex.drafts</groupId>
+  <artifactId>retry</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>${project.groupId}:${project.artifactId}</name>
+  <description />
+  <url />
+  <inceptionYear>2022</inceptionYear>
+  <organization>
+    <name>Industria de Diseño Textil, S.A.</name>
+    <url>https://inditex.com</url>
+  </organization>
+  <licenses />
+
+  <developers />
+
+  <modules>
+    <module>retry-domain</module>
+    <module>retry-application</module>
+    <module>retry-infrastructure</module>
+    <module>retry-api-rest</module>
+    <module>retry-boot</module>
+  </modules>
+
+  <distributionManagement>
+    <repository>
+      <id>inditex-artifacts</id>
+      <name>Inditex Maven Repository</name>
+      <url>https://inditex.jfrog.io/inditex/maven-release-local</url>
+    </repository>
+    <snapshotRepository>
+      <id>inditex-artifacts</id>
+      <name>Inditex Maven Repository</name>
+      <url>https://inditex.jfrog.io/inditex/maven-snapshot-local</url>
+    </snapshotRepository>
+    <site />
+  </distributionManagement>
+
+  <properties>
+    <amginitz-rest.version>1.1.0</amginitz-rest.version>
+    <amiga.service.rest.reactive>true</amiga.service.rest.reactive>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>retry-boot</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>retry-domain</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>retry-application</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>retry-infrastructure</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <!-- Include API First REST contract definition. TODO: Only for archetype. Replace this for the real API. -->
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>retry-api-rest</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- Include API First REST contract definition. TODO: Only for archetype. Replace this for the real API.-->
+      <dependency>
+        <groupId>com.inditex.sscc.api</groupId>
+        <artifactId>amginitz-rest</artifactId>
+        <version>${amginitz-rest.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <dependencies />
+
+  <repositories />
+  <pluginRepositories />
+
+  <build>
+    <finalName>${project.artifactId}-${project.version}</finalName>
+    <pluginManagement>
+      <plugins />
+    </pluginManagement>
+    <plugins>
+    </plugins>
+  </build>
+
+  <reporting />
+
+  <profiles />
+</project>
